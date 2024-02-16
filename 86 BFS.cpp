@@ -53,8 +53,21 @@ vector<int> BFS(int vertex, vector<pair<int, int>> edges) {
 int main() {
     // Example usage:
     
-    int vertices = 5;
-    vector<pair<int, int>> edges = {{0, 1}, {0, 2}, {1, 3}, {2, 4}};
+   int vertices;
+    cout << "Enter the number of vertices: ";
+    cin >> vertices;
+
+    int edgesCount;
+    cout << "Enter the number of edges: ";
+    cin >> edgesCount;
+
+    vector<pair<int, int>> edges;
+    cout << "Enter the edges (vertex1 vertex2):" << endl;
+    for (int i = 0; i < edgesCount; i++) {
+        int u, v;
+        cin >> u >> v;
+        edges.push_back({u, v});
+    }
 
     vector<int> result = BFS(vertices, edges);
 
